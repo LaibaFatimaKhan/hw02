@@ -19,7 +19,7 @@
 \usepackage[table]{xcolor}
 \usepackage{amsfonts,graphicx,amsmath,hyperref}
 \title{Habib University\\CS-113 Discrete Mathematics\\Spring 2018\\HW 2}
-\author{$<your ID>$}  % replace with your ID, e.g. oy02945
+\author{$lk04067$}  % replace with your ID, e.g. oy02945
 \date{Due: 19h, 16th February, 2018}
 
 
@@ -49,12 +49,38 @@
 
   \begin{solution}
     % Write your solution here
+    
+    Let,\\ 
+    $\mathbb{R}$ = Set of Real numbers,\\
+    $\mathbb{C}$ = Set of Complex numbers \\
+    Also, let S be the set of values for the function.\\ 
+    
+    \begin{subparts}
+    \subpart \textbf{Partial function}\\
+        Domain: $\mathbb{R}$   \\
+        Codomain: $\mathbb{R^+}$\\
+        Set of Values: all non-negative integers\\
+        
+    \subpart \textbf{Total function}\\
+        Domain: $\mathbb{R}$\\
+        Codomain: $\mathbb{C}$\\
+        Set of Values: $\mathbb{R}$ \\
+    \end{subparts}
+    
   \end{solution}
   
-  \part[5] Explain whether $f$ is a function from the set of all bit strings to the set of integers if $f(S)$ is the smallest $i \in \mathbb{Z}$� such that the $i$th bit of S is 1 and $f(S) = 0$ when S is the empty string. 
+  \part[5] Explain whether $f$ is a function from the set of all bit strings to the set of integers if $f(S)$ is the smallest $i \in \mathbb{Z}$ such that the $i$th bit of S is 1 and $f(S) = 0$ when S is the empty string. 
   
   \begin{solution}
     % Write your solution here
+    According to the function definition, f(S) is the smallest bit position ($i$) of 1 in a bit string (S). For an empty string, the function value is defined to be zero.\\
+    
+    Consider a bit string of n bits such that all bits are zero. For example S= 00, S= 000, S= 0000, ... etc.\\
+    
+    In the above examples, no bit is 1, it is impossible to find the position of 1 (i.e. the function value).\\
+    
+    Since f(S) is not well-defined for a string of all 0s, f(S) is not a function. \\
+    
   \end{solution}
 
   \part[15] For $X,Y \in S$, explain why (or why not) the following define an equivalence relation on $S$:
@@ -66,18 +92,77 @@
 
   \begin{solution}
     % Write your solution here
+    Equivalence relation is defined as a relation between the elements of a set which is reflexive, symmetric, and transitive.
+    
+    \begin{subparts}
+    \subpart \textbf{``$X$ and $Y$ have been in class together"}\\
+    Transitive property does not hold in this relation.\\
+    Here, the class is not a certain specified class. So, X can be in a class A with Z while Y being in any other class B with Z. And this cannot be inferred as X and Y have been in class together (unless A=B).\\
+    Since the transitive property is not present, ``$X$ and $Y$ have been in class together" is not an equivalence relation on S.\\
+    \subpart \textbf{``$X$ and $Y$ rhyme"}\\
+    
+    a- Reflexive property:\\
+    $\forall$ X $\forall$ Y (``$X$ and $X$ rhyme" $\wedge$ ``$Y$ and $Y$ rhyme") = True\\
+    Reflexive property holds.\\
+    
+    b- Symmetric Property:\\
+     $\forall$ X $\forall$ Y(``$X$ and $Y$ rhyme" $\Leftrightarrow$ ``$Y$ and $X$ rhyme")\\
+     The relation is symmetric.\\
+    
+    c- Transitive Property:\\
+    $\forall$ X $\forall$ Y $\forall$ Z (``$X$ and $Z$ rhyme" $\wedge$ ``$Z$ and $Y$ rhyme" $\rightarrow$ ``$X$ and $Y$ rhyme")
+    Transitive property holds.\\
+    
+    ``$X$ and $Y$ rhyme" is an equivalence relation on S.
+    
+    
+    \subpart \textbf{``$X$ is a subset of $Y$"}
+    This relation is not symmetric.\\
+    ``$X$ is a subset of $Y$" does not imply that ``$Y$ is a subset of $X$ unless X=Y\\
+    For example:\\
+    Let X= $\{1,2,3\}$ and Y= $\{1,2,3,4\}$,
+    here,\\
+    X $\subset$ Y but Y $\not\subset$ X\\
+    
+    ``$X$ is a subset of $Y$" is not an equivalence relation on S.
+    
+    
+    
+  \end{subparts}
   \end{solution}
 
 \end{parts}
 
 %Long questions (75)
 \question[15] Let $A = f^{-1}(B)$. Prove that $f(A) \subseteq B$.
-  \begin{solution}
+  \begin{solution}\\
     % Write your solution here
+    The inverse function of $f$ is the function that assigns to an element b belonging to B the unique element a in A such that $f(a) = b$. The inverse function of $f$ is denoted by $f^{-1}$. Hence, $f^{-1}(b)$ = a when $f(a) = b$.\\
+    
+    Let a $\in$ A and b $\in$ B.
+    
+    Since  $A = f^{-1}(B)$ --(i)\\
+    
+    $\Rightarrow a \in f^{-1}(B)$
+    
+    Using the definition of inverse function,\\
+    $b \in f(f^{-1}(B)) $
+    
+    $(i) \Rightarrow b \in f(A)$\\
+    
+    then,\\
+    
+    $\Rightarrow \forall$ b [$(b \in f(A))\wedge$ (b $\in$ B) $\rightarrow$  $f(A) = B $]\\
+    
+    $\Rightarrow f(A) \subseteq B  $
+    
+    
+    
+    
   \end{solution}
 
 \question[15] Consider $[n] = \{1,2,3,...,n\}$ where $n \in \mathbb{N}$. Let $A$ be the set of subsets of $[n]$ that have even size, and let $B$ be the set of subsets of $[n]$ that have odd size. Establish a bijection from $A$ to $B$, thereby proving $|A| = |B|$. (Such a bijection is suggested below for $n = 3$) 
-
+ 
 \begin{center}
 
   \begin{tabular}{ |c || c | c | c |c |}
@@ -89,6 +174,17 @@
 
   \begin{solution}
     % Write your solution here
+    Considering the given example, we can establish a bijection from A to B as follows:\\
+\[    
+    B= \forall S \in A
+    \begin{cases}
+         (\textrm{S $\cup \{$n$\}$ } &  \textrm{if n $\notin$ S}\\
+         (\textrm { S - $\{$n$\}$ } &  \textrm{if n $\in$ S}
+  
+    \end{cases}
+\]
+
+    Since there is a bijection between A and B, we know that for every element in A there is a corresponding element in B (and vice versa). This, hence, proves that $|A|= |B|$
   \end{solution}
   
 \question Mushrooms play a vital role in the biosphere of our planet. They also have recreational uses, such as in understanding the mathematical series below. A mushroom number, $M_n$, is a figurate number that can be represented in the form of a mushroom shaped grid of points, such that the number of points is the mushroom number. A mushroom consists of a stem and cap, while its height is the combined height of the two parts. Here is $M_5=23$:
@@ -120,12 +216,31 @@ Study the first five mushrooms carefully and make sure you can draw subsequent o
 
   \begin{parts}
     \part[15] Derive a closed-form for $M_n$ in terms of $n$.
-  \begin{solution}
+  \begin{solution}\\
     % Write your solution here
+    The patterns deduced from the provided recurrence:\\
+    
+    Cap Width=n+1\\
+    
+    Stem Height=n-1 \\
+    
+    Cap Height= $\lceil \frac{n+1}{2}\rceil$\\
+    
+    The sum of Arithmetic Progression is\\
+    
+    $S_{n}=\frac{n}{2}[2a+(n-1)d]$ \\
+    
+    $M_{n} = \frac{Cap Height}{2}[2(Cap Width)-(Cap Height-1)] + 2(Stem Height)$\\
+    
+    $M_{n} = \frac{\lceil \frac{n+1}{2}\rceil}{2}[2(n+1)-(\lceil \frac{n+1}{2}\rceil-1)] + 2(n-1)$\\
+    
+    
+    
   \end{solution}
     \part[5] What is the total height of the $20$th mushroom in the series? 
   \begin{solution}
     % Write your solution here
+    Total height of 20th mushroom= 30
   \end{solution}
 \end{parts}
 
@@ -154,11 +269,33 @@ The \href{http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibGen.ht
  
     \begin{solution}
     % Write your solution here
+    From the definition of Fibonacci sequence, any nth term in the Fibonacci sequence can be found as follows,\\
+    
+    F(n) = F(n-1)+F(n-2) where n,F(n) $\in$ $\mathbb{N}$\\
+    
+    Starting from 1 and 2, a Fibonacci sequence be\\ 
+    
+    F=$\{$1, 2, 3, 5, 8,..., F(n)$\}$\\
+    
+    Every element in the sequence is a natural number, so we can say that the Fibonacci sequence is a subset of $\mathbb{N}$ (set of natural numbers).\\
+    
+     i.e. 
+     $\forall$ n $\in \mathbb{N}$ [ (F(n) $\in$ F) $\wedge$ (F(n) $\in \mathbb{N}) \rightarrow $  F  $\subseteq \mathbb{N}$ ]\\
+    
+     Since, F $\subseteq$ $\mathbb{N}$, there is a bijection from Fibonacci sequence F to $\mathbb{N}$, so we can infer that the Fibonacci series is countable.
+   
+    
   \end{solution}
   \part[15] Consider the Modified Wythoff as any array derived from the original, where each entry of the leading diagonal (marked in blue) of the original 2D-Array is replaced with an integer that does not occur in that row. Prove that the Modified Wythoff Array is countable. 
 
   \begin{solution}
     % Write your solution here
+    Suppose, when change the first diagonal, the first element of the first row (i.e. 1) would get changed.\\
+    Since, the second sequence(second row) is dependent on the first element of the first row(i.e. 1st element of Sequence2 = 1st element of sequence1 * Golden Ratio)\\
+    The sequence would change but it would be another integer sequence which would be a subset of set of Natural numbers.\\
+    So, it would still show bijection to the set of natural numbers.\\
+    Hence the modified Wythoff array will remain countable.
+    
   \end{solution}
 \end{parts}
 
